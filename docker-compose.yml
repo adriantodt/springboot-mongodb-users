@@ -1,0 +1,9 @@
+# docker-compose used for development purposes
+
+version: '3.9'
+
+services:
+  development_mongodb:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
