@@ -1,11 +1,12 @@
 plugins {
     id 'org.springframework.boot' version '2.6.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'com.github.otkmnb2783.dotenv' version '0.2.0'
     id 'java'
 }
 
 group = 'net.adriantodt'
-version = '0.0.1-SNAPSHOT'
+version = env.APP_VERSION
 sourceCompatibility = '17'
 
 configurations {

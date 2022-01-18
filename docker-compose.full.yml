@@ -1,0 +1,22 @@
+# docker-compose used for development purposes
+
+version: '3.9'
+
+services:
+  http:
+    build:
+      context: .
+      args:
+        - "APP_VERSION=${APP_VERSION}"
+    environment:
+      - "SPRING_DATA_MONGODB_URI=mongodb://database:27017/users"
+    ports:
+      - '8080:8080'
+    depends_on:
+      - database
+    links:
+      - database
+  database:
+    image: 'mongo'
+    ports:
+      - '27017:27017'
