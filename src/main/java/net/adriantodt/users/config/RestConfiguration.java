@@ -34,8 +34,6 @@ import java.security.interfaces.RSAPublicKey;
 @Configuration
 @RequiredArgsConstructor
 public class RestConfiguration {
-    private final UserService userService;
-
     @Value("${jwt.pub}")
     RSAPublicKey publicKey;
 
@@ -62,11 +60,6 @@ public class RestConfiguration {
             );
 
         return http.build();
-    }
-
-    @Bean
-    UserDetailsService users() {
-        return userService;
     }
 
     @Bean
